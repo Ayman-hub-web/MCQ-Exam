@@ -1,0 +1,15 @@
+<div class="round">
+    <div class="div" *ngFor="let sub of subjects">
+        <div class="subjects">
+            <div class="subname">
+                {{sub.name}}
+            </div>
+        </div>
+        <div class="buttons">
+            <button mat-raised-button color="success" style="background-color: rgb(133, 192, 133)" *ngIf="role === 'student'" routerLink="/exam/{{sub.id}}">Start</button>
+            <button mat-raised-button color="primary" class="between" *ngIf="role != 'student'">View</button>
+            <button mat-raised-button color="warn" *ngIf="role != 'student'" (click)="deleteSub(sub.id)">Delete</button>
+            <button mat-raised-button color="warn" class="mx-2" *ngIf="destroySub && deletedSubId == sub.id  && role != 'student'" (click)="deleteSub(sub.id)">Delete All Questions</button>
+        </div>
+    </div>
+</div>

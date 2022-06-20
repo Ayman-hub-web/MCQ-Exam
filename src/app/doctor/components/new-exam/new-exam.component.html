@@ -1,0 +1,97 @@
+<div class="container">
+    <mat-card>
+        <div class="row d-flex">
+            <div class="col-md-4" *ngIf="!isView && !isCreated">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Subject Name</mat-label>
+                        <input matInput placeholder="Subject Name" formControlName="name">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary">Create Subject</button>
+                </form>
+            </div>
+            <div class="col-md-4 mt" *ngIf="isView || isCreated" [ngClass]="isView || isCreated? 'backBlue' : ''">
+                <!-- <button mat-raised-button color="primary" routerLink="/subjects">Subject Name</button> -->
+                <span>1</span>Subject Name
+            </div>
+            <div class="col-md-4 mt" [ngClass]="isView || isCreated? 'backBlue' : ''" (click)="moreQuestions()"><span>2</span>Questions</div>
+            <div class="col-md-4 mt" [ngClass]="isCreated? 'backBlue' : ''"><span>3</span>View Test</div>
+        </div>
+    </mat-card>
+    <mat-card *ngIf="isView || isAdd && !viewOrder">
+        <form [formGroup]="qesForm" (ngSubmit)="addTest()">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input matInput placeholder="Question" formControlName="question">
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option">
+                <div class="radio">
+                    <div class="row mb-2">
+                        <div class="col-md-6 d-flex">
+                            <mat-radio-button value="{{answer1}}" name="answer1" (change)="onClick($event)" formControlName="correct"></mat-radio-button>
+                            <input matInput placeholder="Answer1" formControlName="answer1">
+                        </div>
+                        <div class="col-md-6 d-flex">
+                            <mat-radio-button name="answer2" value="{{answer2}}" (change)="onClick($event)" formControlName="correct"></mat-radio-button>
+                            <input matInput placeholder="Answer2" formControlName="answer2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 d-flex">
+                            <mat-radio-button name="answer3" value="{{answer3}}" (change)="onClick($event)" formControlName="correct"></mat-radio-button>
+                            <input matInput placeholder="Answer3" formControlName="answer3">
+                        </div>
+                        <div class="col-md-6 d-flex">
+                            <mat-radio-button name="answer4" value="{{answer4}}" (change)="onClick($event)" formControlName="correct"></mat-radio-button>
+                            <input matInput placeholder="Answer4" formControlName="answer4">
+                        </div>
+                    </div>
+                </div>
+            </mat-radio-group>
+            <div class="otherButtons d-flex">
+                <div class="leftButtons">
+                    <button mat-raised-button class="mt-4 mx-2" [disabled]="qesForm.invalid" style="background-color: rgb(133, 192, 133)">Save</button>
+                    <a mat-raised-button class="mt-4" *ngIf="isCreated" color="primary" (click)="viewTest()">View</a>
+                    <a mat-raised-button class="mt-4 btn btn-warning mx-2" (click)="resetForm()">Cancel</a>
+                </div>
+                <div class="rightButtons">
+                    <a mat-raised-button color="warn" class="mt-4 mx-2" (click)="deleteSubject()">Delete</a>
+                    <a mat-raised-button color="accent" class="mt-4" (click)="isDone()">Finish</a>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+
+    <mat-card *ngIf="isCreated && viewOrder">
+        <div class="row mb-4">
+            <div class="col">
+                <span class="fb-300 text-danger">Question:</span>
+                <span>{{createdTest.question}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <span class="fb-300 text-primary">A: </span>{{createdTest.answer1}}
+            </div>
+            <div class="col-md-6">
+                <span class="fb-300 text-primary">B: </span>{{createdTest.answer2}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <span class="fb-300 text-primary">C: </span>{{createdTest.answer3}}
+            </div>
+            <div class="col-md-6">
+                <span class="fb-300 text-primary">D: </span> {{createdTest.answer4}}
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <button mat-raised-button color="warn">Delete</button>
+            </div>
+        </div>
+    </mat-card>
+</div>

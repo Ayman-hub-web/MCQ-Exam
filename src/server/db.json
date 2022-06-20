@@ -1,0 +1,78 @@
+{
+  "doctor": [
+    {
+      "name": "Admin",
+      "username": "admin@admin.com",
+      "password": "123",
+      "role": "doctor"
+    }
+  ],
+  "Students": [
+    {
+      "name": "Ayman",
+      "username": "ayman@test.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "role": "student",
+      "id": 1
+    },
+    {
+      "name": "Mohammed",
+      "username": "mohammed@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "role": "student",
+      "id": 2
+    },
+    {
+      "name": "Ghena",
+      "username": "ghena@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "role": "student",
+      "id": 3
+    }
+  ],
+  "Subjects": [
+    {
+      "id": 2,
+      "name": "English"
+    },
+    {
+      "name": "German",
+      "id": 3
+    }
+  ],
+  "questions": [
+    {
+      "question": "Hallo",
+      "answer1": "en",
+      "answer2": "ar",
+      "answer3": "de",
+      "answer4": "fr",
+      "correct": "fr",
+      "subjectId": 3,
+      "id": 1
+    }
+  ],
+  "Students-Results": [
+    {
+      "user": "Ayman",
+      "subject": "3",
+      "result": 100,
+      "id": 1
+    },
+    {
+      "user": "Ayman",
+      "subject": "3",
+      "result": 33,
+      "id": 2
+    },
+    {
+      "user": "Ayman",
+      "subject": "3",
+      "result": 33,
+      "id": 3
+    }
+  ]
+}

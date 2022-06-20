@@ -1,0 +1,36 @@
+.mat-toolbar {
+    background-color: #bb4c68!important;
+    color: #fff;
+}
+
+img {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 35px;
+}
+
+ul {
+    width: 100%;
+    margin-left: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    li {
+        list-style: none;
+        margin-left: 70px;
+        font-size: 15px;
+    }
+    .user {
+        background-color: #b87f8d;
+        border-radius: 50%;
+        padding: 5px;
+    }
+}

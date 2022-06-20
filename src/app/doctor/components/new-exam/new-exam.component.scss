@@ -1,0 +1,43 @@
+.mat-card {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-bottom: 16px;
+    .d-flex {
+        display: flex;
+        justify-content: space-between;
+        .mt {
+            margin-top: 16px;
+            span {
+                border: 1px solid blue;
+                border-radius: 50%;
+                padding: 2px 4px;
+                margin-right: 2px;
+            }
+        }
+    }
+}
+
+button {
+    margin-left: 8px;
+}
+
+.backBlue {
+    span {
+        border: 1px solid blue;
+        border-radius: 50%;
+        padding: 2px 4px;
+        margin-right: 2px;
+        background-color: blue;
+        color: white;
+    }
+}
+
+#formFieldInput {
+    width: 400px!important;
+    //max-width: 95vw;
+}
+
+.fb-300 {
+    font-size: 16px;
+    font-weight: bold;
+}

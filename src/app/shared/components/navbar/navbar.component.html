@@ -1,0 +1,16 @@
+<mat-toolbar color="purple">
+    <div class="round">
+        <a href="#"><i class="fa-solid fa-graduation-cap logo"></i> فاينال</a>
+        <span></span>
+    </div>
+    <ul>
+        <li *ngIf="logged"><a routerLink="/subjects">Subjects</a></li>
+        <li *ngIf="logged && role === 'doctor'"><a routerLink="/students">Students</a></li>
+        <li *ngIf="logged && role === 'doctor'"><a routerLink="/exam">Exam</a></li>
+        <li *ngIf="logged && role === 'doctor'"><a routerLink="/new-exam">New Exam</a></li>
+        <li *ngIf="!logged"><a routerLink="/login">login</a></li>
+        <li *ngIf="!logged"><a routerLink="/register">register</a></li>
+        <li *ngIf="logged"><a (click)="logout()">logout</a></li>
+        <li class="user" *ngIf="logged && name != ''">{{name}}</li>
+    </ul>
+</mat-toolbar>

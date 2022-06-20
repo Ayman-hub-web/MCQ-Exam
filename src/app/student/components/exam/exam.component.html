@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <span class="head">{{examName}} Test</span>
+    <mat-card *ngFor="let ques of questions; let i=index" class="mt-5">
+        <mat-card-title class="text-danger mb-5"><span class="text-success">Question {{i+1}}:</span>&nbsp;{{ques.question}}</mat-card-title>
+        <mat-card-content>
+            <mat-radio-group aria-label="Select an option">
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <mat-radio-button value={{ques.answer1}} (change)="getValue($event)">{{ques.answer1}}</mat-radio-button>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-radio-button value={{ques.answer2}} (change)="getValue($event)">{{ques.answer2}}</mat-radio-button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-radio-button value={{ques.answer3}} (change)="getValue($event)">{{ques.answer3}}</mat-radio-button>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-radio-button value={{ques.answer4}} (change)="getValue($event)">{{ques.answer4}}</mat-radio-button>
+                    </div>
+                </div>
+            </mat-radio-group>
+        </mat-card-content>
+    </mat-card>
+    <div class="row">
+        <div class="col text-center">
+            <button mat-raised-button style="background-color:rgb(101, 168, 101);color:white" class="mt-5" (click)="getResult()">Result</button>
+        </div>
+    </div>
+    <div class="row mt-5" *ngIf="isResult">
+        <div class="col text-center">
+            <span class="text-success fs-2">{{correctAnswers}}/{{testQuestions}}</span>
+        </div>
+    </div>
+</div>

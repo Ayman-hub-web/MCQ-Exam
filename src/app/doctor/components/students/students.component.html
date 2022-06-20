@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <mat-card>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-success text-gray">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Degree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let dat of data">
+                            <td>{{dat.id}}</td>
+                            <td>{{dat.user}}</td>
+                            <td>{{dat.subject}}</td>
+                            <td>{{dat.result | result}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </mat-card>
+</div>
